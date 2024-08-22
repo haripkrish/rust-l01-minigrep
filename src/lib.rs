@@ -1,11 +1,11 @@
 use std::error::Error;
 use std::fs;
 
-pub mod schema;
-pub mod api;
 use api::grep_search::{search, search_case_insensitive};
 use schema::config;
 
+pub mod schema;
+pub mod api;
 pub fn run(config: config::Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(config.file_path)?;
 
